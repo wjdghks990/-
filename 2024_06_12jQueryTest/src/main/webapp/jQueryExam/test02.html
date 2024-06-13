@@ -23,6 +23,7 @@
 			alert("버튼1(리터럴Fn) 눌림");	
 	}
 	
+	// html은 인터프리터 형식이기 때문에 아래 문장이 없다면, alert("버튼 눌림");이 적용되지 않는다.
 	$(document).ready(function(){
 		/* var b = 
 			document.getElementById("btn1"); */
@@ -32,20 +33,24 @@
 		}); */
 		// $("#btn1").bind('click', bt1_click); 
 		
- 		jQuery("#btn1").click(function(){
+		jQuery("#btn1").click(function(){
+			alert("버튼1 클릭!!!")
+		});
+		
+		/*  jQuery("#btn1").click(function(){
 			alert("버튼 눌림");
-			}); 
+		});  */
 		
 		// btn2를 클릭하면 사용자가 입력한 
 		// 메세지를 가져와서 경고창에 띄우기
 	$("#btn2").click(function(){
 			
-		    var msg =	$("input#msg").val();	
-		    //document.getElementById("msg").value;
+		    var msg =	$("input#msg").val();	// input없어도 됨
+		    //document.getElementById("msg").value; // jQuery에선 .value 대신 .val()함수를 사용하여 value값을 얻어온다.
 			alert(msg);
 			//document.getElementById("msg").value='헐 대박';
-			$("#msg").val("헐  대박"); 
-			$(this).val("Changed!!");
+			$("#msg").val("헐 대박 쩔어!쩔어!"); 
+			$(this).val("Changed!!"); // this는 이벤트의 주체인 #btn2를 나타낸다.
 			//$("#btn2").val("Changed!!");
 		});
 		
@@ -63,6 +68,3 @@
 	
 </body>
 </html>
-
-
-
